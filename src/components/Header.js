@@ -1,6 +1,6 @@
-import logo from "../../assets/logo.png";
-import locationPin from "../../assets/marker.svg";
-import login from "../../assets/user.svg";
+import logo from "../assets/logo.png";
+import locationPin from "../assets/marker.svg";
+import login from "../assets/user.svg";
 const Header = () => {
   return (
     <>
