@@ -1,3 +1,4 @@
+import marker from "../assets/marker.svg";
 const RestaurantCard = ({ restaurantDetails }) => {
   return (
     <div className="card grid grid-rows-2 gap-3 p-1 max-h-96 hover:p-4 transition-all ease-in-out duration-100 cursor-pointer">
@@ -20,6 +21,7 @@ const RestaurantCard = ({ restaurantDetails }) => {
         </span>
         <div className="AreaName px-2 mx-2 mt-1">
           {restaurantDetails?.areaName}
+          <img className="w-3 opacity-70 inline mx-1" src={marker}></img>
         </div>
         <div className="TagsContainer p-1 mx-1 mb-1 mt-0 max-w-full">
           {restaurantDetails?.cuisines.map((ele) => (

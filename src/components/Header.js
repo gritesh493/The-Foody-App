@@ -4,7 +4,7 @@ import login from "../assets/user.svg";
 const Header = () => {
   return (
     <>
-      <div className="Header w-full flex items-center h-20 border-b border-gray-200 shadow-lg shadow-gray-200 align-middle px-[11%]">
+      <div className="Header w-full flex items-center h-20 border-b border-gray-200 shadow-xl align-middle px-[11%] sticky top-0 bg-white z-10">
         <div className="HeaderIconContainer justify-center min-w-fit hidden sm:flex">
           <img
             className="HeaderIcon w-40 m-auto border-r-1 mr-3"
