@@ -1,6 +1,6 @@
 export const RESRAURANT_URL =
   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.6012849&lng=88.3312686&page_type=DESKTOP_WEB_LISTING";
-export const data = {
+export const sampleData = {
   statusCode: 0,
   data: {
     statusMessage: "done successfully",
