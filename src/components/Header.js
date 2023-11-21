@@ -7,6 +7,7 @@ import SearchResults from "./SearchResults";
 import { Link } from "react-router-dom";
 const Header = () => {
   // const [searchList,setSearchList]=useState(false);
+  console.log("Header Rendered");
   return (
     <>
       <div className="Header w-full flex items-center h-20 border-b border-gray-200 shadow-xl align-middle px-[11%] sticky top-0 bg-white z-10">

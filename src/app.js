@@ -5,6 +5,7 @@ import Layout from "./components/Layout";
 import About from "./components/About";
 import Error from "./components/Error";
 import Body from "./components/Body";
+import RestaurantDetails from "./components/RestaurantDetails";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -16,6 +17,11 @@ const appRouter = createBrowserRouter([
     children: [
       { path: "/", element: <Body />, errorElement: <Error /> },
       { path: "/about", element: <About />, errorElement: <Error /> },
+      {
+        path: "/restaurant/:id",
+        element: <RestaurantDetails />,
+        errorElement: <Error />,
+      },
     ],
   },
 ]);
