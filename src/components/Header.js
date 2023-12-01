@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import logo from "../assets/logo.png";
 import locationPin from "../assets/marker.svg";
 import login from "../assets/user.svg";
@@ -7,6 +7,12 @@ import SearchResults from "./SearchResults";
 import { Link } from "react-router-dom";
 const Header = () => {
   // const [searchList,setSearchList]=useState(false);
+  const [searchResults, setSearchResults] = useState([]);
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const [isListFocused, setIsListFocused] = useState(false);
+  const [isSearchBlurred, setIsSearchBlurred] = useState(true);
+  const [isItemClicked, setIsItemClicked] = useState(true);
+
   console.log("Header Rendered");
   return (
     <>
@@ -32,9 +38,30 @@ const Header = () => {
           Filter, Sort, etc. (Will be updated later!!!)
         </div>
 
-        <div className="HeaderSearchBarContainer items-center grow min-w-[360px] h-14 my-3 hidden sm:absolute sm:flex sm:items-center sm:justify-center md:justify-end sm:top-20 lg:top-0 lg:relative">
-          <Search />
-          <SearchResults />
+        <div className="focus:bg-white HeaderSearchBarContainer items-center grow min-w-[360px] h-14 my-3 hidden sm:absolute sm:flex sm:items-center sm:justify-center md:justify-end sm:top-20 lg:top-0 lg:relative focus-within:bg-white">
+          <Search
+            setSearchResults={setSearchResults}
+            setIsSearchFocused={setIsSearchFocused}
+            setIsListFocused={setIsListFocused}
+            setIsSearchBlurred={setIsSearchBlurred}
+            setIsItemClicked={setIsItemClicked}
+            isSearchFocused={isSearchFocused}
+            isListFocused={isListFocused}
+            isSearchBlurred={isSearchBlurred}
+            isItemClicked={isItemClicked}
+          />
+          <SearchResults
+            searchResults={searchResults}
+            setSearchResults={setSearchResults}
+            isSearchFocused={isSearchFocused}
+            setIsSearchFocused={setIsSearchFocused}
+            isListFocused={isListFocused}
+            setIsListFocused={setIsListFocused}
+            isSearchBlurred={isSearchBlurred}
+            setIsSearchBlurred={setIsSearchBlurred}
+            isItemClicked={isItemClicked}
+            setIsItemClicked={setIsItemClicked}
+          />
         </div>
 
         <div className="HeaderLoginContainer ml-2 sm:ml-8 mr-4 flex w-full lg:w-auto justify-end invert">

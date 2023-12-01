@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 
-const RestaurantListContext = createContext({ restaurantList: [1, 2, 3] });
+const RestaurantListContext = createContext({ restaurantList: [] });
 RestaurantListContext.displayName = "RestaurantListContext";
 
 export default RestaurantListContext;
