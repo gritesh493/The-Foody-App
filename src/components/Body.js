@@ -66,7 +66,7 @@ const Body = () => {
     }
     filterRestaurants(tag);
     
-  },[tag]);
+  },[tag,restaurantList]);
   return (<>
   <Hero/>
   <h1 className="font-bold text-2xl mx-[11%] mt-8 mb-4 px-8 pt-8 border-t hidden md:block">
