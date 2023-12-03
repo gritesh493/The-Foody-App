@@ -5,7 +5,7 @@ import login from "../assets/user.svg";
 import Search from "./Search";
 import SearchResults from "./SearchResults";
 import { Link } from "react-router-dom";
-const Header = () => {
+const Header = ({ updateRestaurantList }) => {
   // const [searchList,setSearchList]=useState(false);
   const [searchResults, setSearchResults] = useState([]);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
@@ -23,6 +23,7 @@ const Header = () => {
               className="HeaderIcon w-40 h-full m-auto border-r-1 mr-3"
               src={logo}
               alt="Logo"
+              onClick={() => updateRestaurantList}
             ></img>
           </Link>
         </div>

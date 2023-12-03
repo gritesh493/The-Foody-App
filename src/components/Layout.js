@@ -46,7 +46,7 @@ const Layout = () => {
     >
       <div className="Layout">
         {/* <button onClick={() => updateRestaurantList()}>update</button> */}
-        <Header />
+        <Header updateRestaurantList={updateRestaurantList} />
         <Outlet />
         <Footer />
       </div>
