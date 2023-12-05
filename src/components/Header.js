@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import logo from "../assets/logo.png";
-import foodyIcon from "../assets/foodyIcon.png";
+import logoIcon from "../assets/logoIcon.png";
 import locationPin from "../assets/marker.svg";
 import login from "../assets/user.svg";
 import Search from "./Search";
@@ -28,7 +28,7 @@ const Header = ({ updateRestaurantList }) => {
             ></img>
             <img
               className="HeaderIcon w-14 h-full m-auto border-r-1 mr-3 flex sm:hidden md:flex lg:hidden "
-              src={foodyIcon}
+              src={logoIcon}
               alt="Logo"
               onClick={() => updateRestaurantList}
             ></img>
