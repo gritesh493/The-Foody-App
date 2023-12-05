@@ -8,8 +8,10 @@ import { useContext, useState } from "react";
 import RestaurantListContext from "../assets/Contexts/RestaurantListContext";
 import Hero from "./Hero";
 import SecondaryHeader from "./SecondaryHeader";
+import CartButton from "./CartButton";
+import {Link} from 'react-router-dom'
 
-const Body = () => {
+const Body = ({ref}) => {
   console.log("Body Rendered")
   const {restaurantList,loading,setLoading}=useContext(RestaurantListContext);
   const [restaurants,setRestaurants]=useState(restaurantList);
@@ -75,7 +77,7 @@ const Body = () => {
         <h1 className="font-bold text-2xl sm:mx-[11%] mt-8 mb-4 px-8 pt-8 border-t md:hidden block">
           All Restaurants Nearby
         </h1>
-        <SecondaryHeader setRestaurants={setRestaurants} tag={tag} setTag={setTag}/>
+        <SecondaryHeader setRestaurants={setRestaurants} tag={tag} setTag={setTag} ref={ref}/>
 
     {(restaurants==""||loading)?(<Shimmer/>):(
     <div className="RestaurantCardsContainer content-center grid-cols-1 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-8 my-4 sm:mt-20 lg:my-4 mx-2 sm:mx-[11%]">
@@ -83,6 +85,7 @@ const Body = () => {
         return <RestaurantCard restaurantDetails={...ele?.info} key={ele?.info?.id}/>;
       })}
     </div>)}
+      <CartButton/>
     </>
   );
 };

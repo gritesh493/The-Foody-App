@@ -1,12 +1,15 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import RestaurantListContext from "../assets/Contexts/RestaurantListContext";
+import CartItemsContext from "../assets/Contexts/CartItemsContext";
 import Shimmer from "./Simmer";
+import CartButton from "./CartButton";
 
 const RestaurantDetails = () => {
   const [aboutRestaurant, setAboutRestaurant] = useState([]);
   const params = useParams();
   const { restaurantList } = useContext(RestaurantListContext);
+  const { setCartItems, cartItems } = useContext(CartItemsContext);
 
   useEffect(() => {
     const restaurant = restaurantList.filter((ele) => {
@@ -124,7 +127,23 @@ const RestaurantDetails = () => {
                       className="w-full h-full object-cover rounded-xl p-1"
                       alt={ele?.info?.name + " - Image"}
                     />
-                    <div className="AddtoCartButton inline shadow-lg border z-1 relative bg-white bg-opacity-90 -top-[25%] left-[20%] px-1 rounded-md">
+                    <div
+                      className="AddtoCartButton inline shadow-lg border z-1 relative bg-white bg-opacity-90 -top-[25%] left-[20%] px-1 rounded-md cursor-pointer"
+                      onClick={() =>
+                        setCartItems([
+                          ...cartItems,
+                          {
+                            restaurant: aboutRestaurant[0],
+                            item: ele,
+                            itemId:
+                              restaurantList[0]?.info?.id +
+                              Math.random().toString(36),
+                            // ele +
+                            // cartItems.length,
+                          },
+                        ])
+                      }
+                    >
                       AddItem
                     </div>
                   </div>
@@ -134,6 +153,7 @@ const RestaurantDetails = () => {
           </div>
         </div>
       </div>
+      <CartButton />
     </div>
   );
 };

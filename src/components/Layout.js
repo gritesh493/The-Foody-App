@@ -1,8 +1,9 @@
 import Header from "./Header";
 import Footer from "./Footer";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import RestaurantListContext from "../assets/Contexts/RestaurantListContext";
+import CartItemsContext from "../assets/Contexts/CartItemsContext";
 import { getRestaurantList } from "../assets/utils";
 import { RESRAURANT_URL, sampleData } from "../assets/constant.js";
 
@@ -10,9 +11,12 @@ const Layout = () => {
   console.log("Layout Rendered");
   const [restaurantList, setRestaurantList] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
   console.log(
     restaurantList.length == 0 ? "restaurantList is Empty" : restaurantList
   );
+
+  console.log(cartItems);
 
   async function updateRestaurantList() {
     setLoading(true);
@@ -44,12 +48,14 @@ const Layout = () => {
     <RestaurantListContext.Provider
       value={{ restaurantList, updateRestaurantList, loading, setLoading }}
     >
-      <div className="Layout">
-        {/* <button onClick={() => updateRestaurantList()}>update</button> */}
-        <Header updateRestaurantList={updateRestaurantList} />
-        <Outlet />
-        <Footer />
-      </div>
+      <CartItemsContext.Provider value={{ setCartItems, cartItems }}>
+        <div className="Layout">
+          {/* <button onClick={() => updateRestaurantList()}>update</button> */}
+          <Header updateRestaurantList={updateRestaurantList} />
+          <Outlet />
+          <Footer />
+        </div>
+      </CartItemsContext.Provider>
     </RestaurantListContext.Provider>
   );
 };
