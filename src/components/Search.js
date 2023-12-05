@@ -67,7 +67,7 @@ const Search = ({
 
         <input
           type="text"
-          placeholder="Search for restaurant and food"
+          placeholder="Search for restaurant"
           className="w-full bg-inherit rounded-l-xl outline-none pl-8 h-full z-20 "
           value={searchText}
           onClick={() => {
@@ -90,7 +90,7 @@ const Search = ({
             setIsSearchFocused(true);
           }}
         ></input>
-        <button className="Search h-full p-3 rounded-r-xl pointer-events-none bg-inherit overflow-hidden">
+        <button className="Search h-full p-3 rounded-r-xl pointer-events-none bg-inherit overflow-hidden z-10">
           <svg
             width="20"
             height="21"

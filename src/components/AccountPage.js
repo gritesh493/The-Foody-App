@@ -1,8 +1,8 @@
+import react from "react";
 import { Link } from "react-router-dom";
-
-const Footer = () => {
+const AccountPage = () => {
   return (
-    <div className="FooterItemsContainer mx-[11%] hidden md:flex md:flex-col">
+    <div className="AccountsPage">
       <Link to="/about">
         <div>About</div>
       </Link>
@@ -11,4 +11,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default AccountPage;

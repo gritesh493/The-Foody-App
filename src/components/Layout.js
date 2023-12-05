@@ -6,6 +6,7 @@ import RestaurantListContext from "../assets/Contexts/RestaurantListContext";
 import CartItemsContext from "../assets/Contexts/CartItemsContext";
 import { getRestaurantList } from "../assets/utils";
 import { RESRAURANT_URL, sampleData } from "../assets/constant.js";
+import PhoneNavbar from "./PhoneNavbar.js";
 
 const Layout = () => {
   console.log("Layout Rendered");
@@ -53,6 +54,7 @@ const Layout = () => {
           {/* <button onClick={() => updateRestaurantList()}>update</button> */}
           <Header updateRestaurantList={updateRestaurantList} />
           <Outlet />
+          <PhoneNavbar />
           <Footer />
         </div>
       </CartItemsContext.Provider>

@@ -1,7 +1,7 @@
 import HeroImg from "../assets/Hero.jpg";
 const Hero = () => {
   return (
-    <div className="HeroComponentContainer h-40 md:h-80 w-full mb-10 flex  items-center  sm:mt-20 lg:mt-0">
+    <div className="HeroComponentContainer h-40 md:h-80 w-full mb-10 flex  items-center mt-0">
       <img
         src={HeroImg}
         className="pr-0 w-96 h-60 hidden sm:inline md:h-80 object-cover overflow-hidden rounded-b-3xl ml-[11%]"

@@ -39,7 +39,7 @@ const Cart = () => {
       </Link>
     </div>
   ) : (
-    <div className="CartPage md:mx-[22%] transition-all">
+    <div className="CartPage md:mx-[22%] transition-all pb-20">
       {/* <button className="ClearCart" onClick={() => setCartItems([])}>
         Clear Cart
       </button> */}

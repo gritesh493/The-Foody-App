@@ -30,14 +30,14 @@ const RestaurantDetails = () => {
   return aboutRestaurant.length == 0 ? (
     <Shimmer />
   ) : (
-    <div className="RestaurantDetailsPage md:mx-[22%]">
-      <div className="mt-4 mb-2 text-xs font-semibold text-slate-500">
+    <div className="RestaurantDetailsPage px-1 mx-1 md:mx-[22%] pb-20">
+      <div className="mt-4 mb-2 mx-1 text-xs font-semibold text-slate-500">
         Home / Kolkata / {aboutRestaurant[0]?.info?.name}
       </div>
 
       <div className="RestaurantDetailsContainer ">
-        <div className="topContainer border-dashed border-b p-2 m-2 flex flex-wrap justify-between">
-          <div className="leftSection">
+        <div className="topContainer border-dashed border-b p-2 m-2 flex justify-between">
+          <div className="leftSection grow">
             <h1 className="mt-4 mb-2 text-lg font-bold text-slate-900">
               {aboutRestaurant[0]?.info?.name}
             </h1>
@@ -62,7 +62,8 @@ const RestaurantDetails = () => {
                 "Far " +
                   "(" +
                   aboutRestaurant[0]?.info?.sla?.lastMileTravelString +
-                  ")  |  Additional delivery fee will apply"}
+                  ")  "}
+              <span>{"|  Additional delivery fee will apply"}</span>
             </div>
           </div>
           <div className="rightSection border flex flex-col justify-evenly m-2 px-3 py-2 rounded-xl max-h-24 min-w-fit">
