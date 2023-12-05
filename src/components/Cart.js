@@ -129,7 +129,11 @@ const Cart = () => {
         </div>
         <div className="BillSection h-20 mt-4 m-2 px-[11%] flex border-2 rounded-lg items-center justify-between font-semibold">
           <div className="font-semibold  text-lg">
-            {"₹" + (totalPrice - (150 + 20 + 59))}
+            {`₹${
+              totalPrice - (150 + 20 + 59) < 0
+                ? 0
+                : totalPrice - (150 + 20 + 59)
+            }`}
           </div>
           <button className="p-2 m-2 text-lg rounded-lg bg-gradient-to-b from-[#F29863]  to-[#F27E63] border-[#F2F2F2] text-[#F2F2F2] hover:scale-110 transition-transform">
             Place Order
