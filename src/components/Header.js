@@ -21,13 +21,13 @@ const Header = ({ updateRestaurantList }) => {
         <div className="HeaderIconContainer justify-center min-w-fit flex">
           <Link to="/">
             <img
-              className="HeaderIcon w-40 h-full m-auto border-r-1 mr-3 hidden sm:flex md:hidden lg:flex"
+              className="HeaderIcon w-40 h-full m-auto border-r-1 mr-3 hidden sm:flex md:hidden lg:flex "
               src={logo}
               alt="Logo"
               onClick={() => updateRestaurantList}
             ></img>
             <img
-              className="HeaderIcon w-14 h-full m-auto border-r-1 mr-3 flex sm:hidden md:flex lg:hidden"
+              className="HeaderIcon w-14 h-full m-auto border-r-1 mr-3 flex sm:hidden md:flex lg:hidden "
               src={foodyIcon}
               alt="Logo"
               onClick={() => updateRestaurantList}
