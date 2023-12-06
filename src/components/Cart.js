@@ -51,13 +51,15 @@ const Cart = () => {
             const number = str.match(/\d+/g);
             return (
               <div className="listItemContainer flex max-h-32 justify-between items-center m-2 p-2 border-b-2 mt-4">
-                <div className="itemInfo flex flex-col">
-                  <h1 className="font-semibold text-lg">{ele.item}</h1>
-                  <div className="font-normal text-sm ">
-                    {"From " + ele?.restaurant?.info?.name}
+                <Link to={"/restaurant/" + ele?.restaurant?.info?.id}>
+                  <div className="itemInfo flex flex-col">
+                    <h1 className="font-semibold text-lg">{ele.item}</h1>
+                    <div className="font-normal text-sm ">
+                      {"From " + ele?.restaurant?.info?.name}
+                    </div>
+                    <div className="font-normal pt-2  ">{"₹" + number}</div>
                   </div>
-                  <div className="font-normal pt-2  ">{"₹" + number}</div>
-                </div>
+                </Link>
 
                 <div
                   className={
