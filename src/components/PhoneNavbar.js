@@ -11,7 +11,7 @@ const PhoneNavbar = () => {
   return (
     <div
       className={
-        "phoneNavbarContainer md:hidden w-full justify-around flex items-center h-16 sm:h-20 border border-gray-200 shadow-xl align-middle px-[1%] sm:px-[11%] sticky bottom-0 bg-white z-10"
+        "phoneNavbarContainer md:hidden w-full justify-around flex items-center h-16 sm:h-20 border-t border-gray-200 shadow-xl align-middle px-[1%] sm:px-[11%] sticky bottom-0 bg-white z-10"
       }
     >
       <Link to={"/"}>

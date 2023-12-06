@@ -58,6 +58,7 @@ const Header = ({ updateRestaurantList }) => {
             isSearchBlurred={isSearchBlurred}
             isItemClicked={isItemClicked}
           />
+
           <SearchResults
             searchResults={searchResults}
             setSearchResults={setSearchResults}
@@ -71,7 +72,6 @@ const Header = ({ updateRestaurantList }) => {
             setIsItemClicked={setIsItemClicked}
           />
         </div>
-
         <div className="HeaderLoginContainer ml-2 sm:ml-8 mr-4 hidden md:flex w-fit lg:w-auto justify-end invert">
           <img
             src={login}

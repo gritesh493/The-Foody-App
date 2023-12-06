@@ -129,7 +129,7 @@ const RestaurantDetails = () => {
                       alt={ele?.info?.name + " - Image"}
                     />
                     <div
-                      className="AddtoCartButton inline shadow-lg border z-1 relative bg-white bg-opacity-90 -top-[25%] left-[20%] px-1 rounded-md cursor-pointer"
+                      className="AddtoCartButton flex z-1 relative -top-[25%] left-[1%] right-[1%] w-full text-center items-center justify-center"
                       onClick={() =>
                         setCartItems([
                           ...cartItems,
@@ -145,7 +145,9 @@ const RestaurantDetails = () => {
                         ])
                       }
                     >
-                      AddItem
+                      <div className="bg-white bg-opacity-95 border-2 rounded-md cursor-pointer mx-1 px-1 shadow-lg">
+                        Add
+                      </div>
                     </div>
                   </div>
                 </div>
