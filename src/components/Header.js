@@ -72,12 +72,14 @@ const Header = ({ updateRestaurantList }) => {
             setIsItemClicked={setIsItemClicked}
           />
         </div>
-        <div className="HeaderLoginContainer ml-2 sm:ml-8 mr-4 hidden md:flex w-fit lg:w-auto justify-end invert">
-          <img
-            src={login}
-            className="w-12 h-12 min-w-[48px] opacity-80 rounded-full bg-slate-100 border-4 border-slate-200 justify-self-end"
-          />
-        </div>
+        <Link to={"/account"}>
+          <div className="HeaderLoginContainer cursor-pointer ml-2 sm:ml-8 mr-4 hidden md:flex w-fit lg:w-auto justify-end invert">
+            <img
+              src={login}
+              className="w-12 h-12 min-w-[48px] opacity-80 rounded-full bg-slate-100 border-4 border-slate-200 justify-self-end"
+            />
+          </div>
+        </Link>
       </div>
     </>
   );

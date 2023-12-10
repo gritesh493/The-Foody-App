@@ -30,7 +30,7 @@ const Cart = () => {
   console.log(cartItems);
   const imageLink = `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/`;
   return cartItems.length == 0 ? (
-    <div className="emptyCart m-[11%] flex flex-col items-center justify-center h-[70vh] md:h-fit ">
+    <div className="emptyCart m-[11%] flex flex-col items-center justify-center h-[80vh] md:h-fit ">
       <div className="text-2xl">Your Cart is Empty !!!</div>
       <Link to={"/"}>
         <div className="font-thin cursor-pointer hover:border-b-2 hover:border-slate-300 transition-all">
@@ -39,7 +39,7 @@ const Cart = () => {
       </Link>
     </div>
   ) : (
-    <div className="CartPage md:mx-[22%] transition-all pb-20">
+    <div className="CartPage md:mx-[22%] min-h-[80vh] transition-all pb-20">
       {/* <button className="ClearCart" onClick={() => setCartItems([])}>
         Clear Cart
       </button> */}
