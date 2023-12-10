@@ -1,6 +1,7 @@
 import { useFormik } from "formik";
 import { SignupSchema } from "../schema/formSchema";
-import Footer from "./Footer";
+import { useContext } from "react";
+import LoginUserContext from "../assets/Contexts/LoginUserContext";
 const initialValues = {
   name: "",
   email: "",
@@ -8,7 +9,7 @@ const initialValues = {
   confirmPassword: "",
 };
 
-const SignupForm = (setLoggedIn) => {
+const SignupForm = ({ setLoggedIn }) => {
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues,
@@ -102,9 +103,19 @@ const SignupForm = (setLoggedIn) => {
         </div>
       </form>
       <div className=" m-2 p-2 flex items-center justify-center ">
-        <div className="hover:underline underline-offset-4 hover:cursor-pointer transition-all m-2 p-2">
+        <button
+          className="hover:underline underline-offset-4 hover:cursor-pointer transition-all m-2 p-2"
+          onClick={() =>
+            setLoggedIn({
+              name: "Guest",
+              email: "guest@guest.com",
+              password: "Guest123",
+              confirmPassword: "Guest123",
+            })
+          }
+        >
           Login as Guest
-        </div>
+        </button>
       </div>
       <div className="m-2 p-2">
         <div className="FooterItemsContainer mx-[11%] flex flex-col items-center justify-center border-t border-[#F27E63] border-opacity-30 m-2">

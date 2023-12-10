@@ -7,12 +7,15 @@ import CartItemsContext from "../assets/Contexts/CartItemsContext";
 import { getRestaurantList } from "../assets/utils";
 import { RESRAURANT_URL, sampleData } from "../assets/constant.js";
 import PhoneNavbar from "./PhoneNavbar.js";
+import LoginUserContext from "../assets/Contexts/LoginUserContext.js";
 
 const Layout = () => {
   console.log("Layout Rendered");
   const [restaurantList, setRestaurantList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [cartItems, setCartItems] = useState([]);
+  const [loggedIn, setLoggedIn] = useState([]);
+
   console.log(
     restaurantList.length == 0 ? "restaurantList is Empty" : restaurantList
   );
@@ -46,19 +49,21 @@ const Layout = () => {
   }, []);
 
   return (
-    <RestaurantListContext.Provider
-      value={{ restaurantList, updateRestaurantList, loading, setLoading }}
-    >
-      <CartItemsContext.Provider value={{ setCartItems, cartItems }}>
-        <div className="Layout">
-          {/* <button onClick={() => updateRestaurantList()}>update</button> */}
-          <Header updateRestaurantList={updateRestaurantList} />
-          <Outlet />
-          <PhoneNavbar />
-          <Footer />
-        </div>
-      </CartItemsContext.Provider>
-    </RestaurantListContext.Provider>
+    <LoginUserContext.Provider value={{ loggedIn, setLoggedIn }}>
+      <RestaurantListContext.Provider
+        value={{ restaurantList, updateRestaurantList, loading, setLoading }}
+      >
+        <CartItemsContext.Provider value={{ setCartItems, cartItems }}>
+          <div className="Layout">
+            {/* <button onClick={() => updateRestaurantList()}>update</button> */}
+            <Header updateRestaurantList={updateRestaurantList} />
+            <Outlet />
+            <PhoneNavbar />
+            <Footer />
+          </div>
+        </CartItemsContext.Provider>
+      </RestaurantListContext.Provider>
+    </LoginUserContext.Provider>
   );
 };
 

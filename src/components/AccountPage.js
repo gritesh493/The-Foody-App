@@ -1,11 +1,12 @@
-import react, { useState } from "react";
+import react, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import SignupForm from "./SignupForm";
 import LoginForm from "./LoginForm";
+import LoginUserContext from "../assets/Contexts/LoginUserContext";
 
 const AccountPage = () => {
   const [formType, setFormType] = useState("signup");
-  const [loggedIn, setLoggedIn] = useState([]);
+  const { loggedIn, setLoggedIn } = useContext(LoginUserContext);
   console.log(loggedIn);
   return loggedIn.length == 0 ? (
     <div className="AccountsPage min-h-[100vh] flex flex-col bg-gradient-to-l from-[#f28e63] to-[#fe9f3298] rounded-b-3xl m-0 md:mx-1">
@@ -60,7 +61,7 @@ const AccountPage = () => {
     </div>
   ) : (
     <div className="AccountsPageLoggedin min-h-[100vh] flex flex-col items-center justify-center">
-      <div className="text-6xl font-thin">Welcome {loggedIn.name},</div>
+      <div className="text-4xl font-thin">Welcome {loggedIn.name},</div>
       <Link to={"/"}>
         <div className="text-gray-500 hover:underline underline-offset-4 hover:cursor-pointer transition-all m-2 p-2">
           Order something fresh !
