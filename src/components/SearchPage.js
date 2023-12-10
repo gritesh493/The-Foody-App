@@ -9,7 +9,7 @@ const SearchPage = () => {
   const [isSearchBlurred, setIsSearchBlurred] = useState(true);
   const [isItemClicked, setIsItemClicked] = useState(true);
   return (
-    <div className="focus:bg-white SearchBarContainer items-center grow min-w-[240px] h-[75vh] my-3 flex flex-col focus-within:bg-white pt-4">
+    <div className="focus:bg-white SearchBarContainer items-center grow min-w-[240px] min-h-[85vh] mt-3 flex flex-col focus-within:bg-white pt-4">
       <Search
         setSearchResults={setSearchResults}
         setIsSearchFocused={setIsSearchFocused}
@@ -21,7 +21,7 @@ const SearchPage = () => {
         isSearchBlurred={isSearchBlurred}
         isItemClicked={isItemClicked}
       />
-      <div className="top-[12%] absolute items-center grow min-w-full my-3 flex flex-col justify-center">
+      <div className="top-[12%] absolute items-center grow min-w-full mt-3 flex flex-col justify-center">
         <SearchResults
           searchResults={searchResults}
           setSearchResults={setSearchResults}
