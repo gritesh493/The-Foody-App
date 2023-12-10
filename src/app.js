@@ -9,6 +9,7 @@ import RestaurantDetails from "./components/RestaurantDetails";
 import Cart from "./components/Cart";
 import SearchPage from "./components/SearchPage";
 import AccountPage from "./components/AccountPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -32,4 +33,4 @@ const appRouter = createBrowserRouter([
   },
 ]);
 
-root.render(<RouterProvider router={appRouter} />);
+root.render(<RouterProvider router={appRouter}></RouterProvider>);

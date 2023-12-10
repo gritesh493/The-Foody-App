@@ -8,6 +8,7 @@ import { getRestaurantList } from "../assets/utils";
 import { RESRAURANT_URL, sampleData } from "../assets/constant.js";
 import PhoneNavbar from "./PhoneNavbar.js";
 import LoginUserContext from "../assets/Contexts/LoginUserContext.js";
+import ScrollToTop from "./ScrollToTop.js";
 
 const Layout = () => {
   console.log("Layout Rendered");
@@ -56,6 +57,7 @@ const Layout = () => {
         <CartItemsContext.Provider value={{ setCartItems, cartItems }}>
           <div className="Layout">
             {/* <button onClick={() => updateRestaurantList()}>update</button> */}
+            <ScrollToTop />
             <Header updateRestaurantList={updateRestaurantList} />
             <Outlet />
             <PhoneNavbar />
