@@ -78,7 +78,7 @@ const SignupForm = ({ setLoggedIn }) => {
         )}
         <input
           className="rounded-lg focus:outline-none focus:border-2 border-[#f27d63] m-2 p-2 caret-[#f27d63]"
-          type="confirmPassword"
+          type="Password"
           autoComplete="off"
           name="confirmPassword"
           id="confirmPassword"

@@ -1,7 +1,7 @@
 import Header from "./Header";
 import Footer from "./Footer";
 import { Link, Outlet } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import RestaurantListContext from "../assets/Contexts/RestaurantListContext";
 import CartItemsContext from "../assets/Contexts/CartItemsContext";
 import { getRestaurantList } from "../assets/utils";
@@ -9,6 +9,7 @@ import { RESRAURANT_URL, sampleData } from "../assets/constant.js";
 import PhoneNavbar from "./PhoneNavbar.js";
 import LoginUserContext from "../assets/Contexts/LoginUserContext.js";
 import ScrollToTop from "./ScrollToTop.js";
+import AccountPage from "./AccountPage.js";
 
 const Layout = () => {
   console.log("Layout Rendered");
@@ -59,7 +60,7 @@ const Layout = () => {
             {/* <button onClick={() => updateRestaurantList()}>update</button> */}
             <ScrollToTop />
             <Header updateRestaurantList={updateRestaurantList} />
-            <Outlet />
+            {loggedIn.length == 0 ? <AccountPage /> : <Outlet />}
             <PhoneNavbar />
             <Footer />
           </div>
